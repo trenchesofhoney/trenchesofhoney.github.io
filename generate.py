@@ -26,6 +26,21 @@ def render(template: str, variables: dict[str, str]) -> str:
     return pattern.sub(replace, template)
 
 
+def build_toc(
+    template: str,
+    variables: dict[str, str],
+):
+    ids = re.findall(r'<section id="([^"]+)"', template)
+
+    toc = ''
+    num = 1;
+    for item in ids:
+        toc += f'\n<li><a href=#{item}>0{num} — {item.title()}</a></li>'
+        num += 1
+
+    variables['TOC'] = toc
+
+
 def generate(
     template_name: str,
     output_path: str,
@@ -40,6 +55,7 @@ def generate(
         )
 
     template = template_path.read_text(encoding="utf-8")
+    build_toc(template,variables)
     output = render(template, variables)
 
     output_path.parent.mkdir(
@@ -55,6 +71,12 @@ def generate(
     print(f"Generated {output_path}")
 
 
+def default_variables(
+    variables: dict[str, str],
+):
+    variables['WEBNAME'] = 'Trenches of Honey'
+
+
 def parse_variables(arguments):
     variables = {}
 
@@ -66,6 +88,8 @@ def parse_variables(arguments):
 
         name, value = argument.split("=", 1)
         variables[name] = value
+
+    default_variables(variables)
 
     return variables
 

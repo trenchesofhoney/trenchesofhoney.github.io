@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} [{{WEBNAME}}]</title>
+
+  <style>
+    :root {
+      --paper: #fdfdfb;
+      --ink: #202020;
+      --muted: #686868;
+      --rule: #d8d8d3;
+      --accent: #254d68;
+      --accent-light: #edf2f5;
+      --max-width: 1080px;
+      --reading-width: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    ::selection {
+      background: #dce7ed;
+    }
+
+    .site {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 64px 0 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: normal;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    nav {
+      flex-shrink: 0;
+    }
+
+    nav a {
+      margin-left: 22px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 210px minmax(0, var(--reading-width));
+      gap: 70px;
+      padding: 58px 0 90px;
+    }
+
+    aside {
+      position: sticky;
+      top: 30px;
+      align-self: start;
+    }
+
+    .toc-title {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--rule);
+    }
+
+    .toc li {
+      margin: 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 5px 0 5px 15px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      scroll-margin-top: 30px;
+      margin-bottom: 68px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.65rem;
+      font-weight: normal;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      margin: 32px 0 8px;
+      font-size: 1.1rem;
+      font-weight: normal;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.22rem;
+      line-height: 1.65;
+    }
+
+    .rule {
+      height: 1px;
+      margin: 32px 0;
+      background: var(--rule);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 30px 0;
+    }
+
+    .fact {
+      padding: 17px 20px 17px 0;
+    }
+
+    .fact + .fact {
+      padding-left: 20px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      margin: 28px 0;
+      padding: 18px 22px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .links li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .links li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    footer {
+      padding: 25px 0 45px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .site {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      header {
+        padding-top: 38px;
+      }
+
+      .header-inner {
+        display: block;
+      }
+
+      nav {
+        margin-top: 25px;
+      }
+
+      nav a {
+        margin: 0 18px 0 0;
+      }
+
+      main {
+        display: block;
+        padding-top: 35px;
+      }
+
+      aside {
+        position: static;
+        margin-bottom: 45px;
+      }
+
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        padding: 7px 0;
+      }
+
+      .toc a {
+        padding: 4px 15px 4px 0;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .fact + .fact {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site">
+
+    <header>
+      <div class="header-inner">
+        <div>
+          <h1 class="name">{{TITLE}} {{SUBTITLE}}</h1>
+          <p class="subtitle">{{AUTHOR}} · {{YEAR}} · {{PUBLISHER}}</p>
+        </div>
+
+        <nav aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <aside aria-label="Table of contents">
+        <p class="toc-title">Contents</p>
+
+        <ol class="toc">
+{{TOC}}
+        </ol>
+      </aside>
+
+      <article>
+
+        <section id="about">
+          <h2>About</h2>
+
+          <p class="lead">
+            I am a researcher and writer interested in the ways ideas,
+            institutions, and technologies shape one another.
+          </p>
+
+          <p>
+            My work sits at the intersection of theory and practice. I am
+            particularly interested in careful scholarship, clear writing,
+            and the development of useful frameworks for understanding
+            complicated subjects.
+          </p>
+
+          <p>
+            This site is a small record of my work and interests. It is
+            intentionally simple: a place for publications, notes, projects,
+            and a few words about what I am currently thinking about.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <span class="fact-label">Field</span>
+              Your Field / Discipline
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Location</span>
+              City, Country
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Current Role</span>
+              Position or Institution
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Updated</span>
+              September 2026
+            </div>
+          </div>
+        </section>
+
+        <section id="work">
+          <h2>Work</h2>
+
+          <p>
+            My current work concerns the relationship between abstract ideas
+            and their practical consequences. I approach research as a
+            process of making distinctions, examining evidence, and
+            communicating conclusions precisely.
+          </p>
+
+          <div class="notice">
+            <p>
+              <strong>Current project.</strong>
+              A short description of the project, research question, or
+              larger body of work currently occupying your attention.
+            </p>
+          </div>
+
+          <h3>Selected work</h3>
+
+          <ul class="links">
+            <li>
+              <a href="#">Project or Publication Title</a>
+              <span> — 2026</span>
+            </li>
+            <li>
+              <a href="#">Another Research Project</a>
+              <span> — 2025</span>
+            </li>
+            <li>
+              <a href="#">Essay, Article, or Paper</a>
+              <span> — 2024</span>
+            </li>
+          </ul>
+        </section>
+
+        <section id="interests">
+          <h2>Interests</h2>
+
+          <p>
+            My broader interests include the history of ideas, institutions,
+            technology, methodology, and the relationship between theory and
+            empirical evidence.
+          </p>
+
+          <p>
+            I am also interested in questions that resist neat disciplinary
+            boundaries. Some of the most useful problems, in my experience,
+            begin precisely where established categories become insufficient.
+          </p>
+        </section>
+
+        <section id="notes">
+          <h2>Notes</h2>
+
+          <p>
+            This section can serve as a lightweight journal, reading list,
+            bibliography, or collection of short observations.
+          </p>
+
+          <ul class="links">
+            <li><a href="#">A note on a recent reading</a></li>
+            <li><a href="#">Thoughts on an ongoing question</a></li>
+            <li><a href="#">A short methodological note</a></li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+
+          <p>
+            For academic correspondence, collaboration, or other inquiries,
+            please write to
+            <a href="mailto:you@example.com">you@example.com</a>.
+          </p>
+
+          <p>
+            You may also find me through the links below.
+          </p>
+
+          <ul class="links">
+            <li><a href="#">Institutional profile</a></li>
+            <li><a href="#">Google Scholar</a></li>
+            <li><a href="#">ORCID</a></li>
+          </ul>
+        </section>
+
+      </article>
+    </main>
+
+    <footer>
+      <p>© 2026 Your Name. Last updated September 2026.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
