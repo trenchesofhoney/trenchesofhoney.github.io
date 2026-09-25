@@ -7,6 +7,7 @@ if [ -d 'gen' ]; then
    rm -rf 'gen'
 fi
 mkdir -p gen
+cp templates/index_header.html docs/index.html
 for file in reviews/*; do
    filename=$(basename "$file")
    echo '   '$filename
@@ -17,15 +18,21 @@ for file in reviews/*; do
       > gen/$filename
 done
 
-echo generating main page
-python3 generate.py index.html docs/index.html
+echo Akkadian reviews
+cat templates/index_review_subject.html >> docs/index.html
 
-echo generating reviews
+cat templates/index_review_book.html >> docs/index.html
 python3 generate.py --gen huehnergard \
+   SUBJECT='Akkadian' \
    TITLE='A Grammar of Akkadian' \
    SUBTITLE='' \
-   AUTHOR='' \
-   YEAR='' \
-   PUBLISHER=''
+   AUTHOR='John Huehnergard' \
+   YEAR='2026' \
+   PUBLISHER='Harvard University Press' \
+
+cat templates/index_review_endsubject.html >> docs/index.html
+
+echo finishing main page
+cat templates/index_footer.html >> docs/index.html
 
 echo done

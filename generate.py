@@ -48,8 +48,8 @@ def build_paths(
 ) -> tuple[str, Path]:
 
     if template_name == '--gen':
-        # this is pulling from te gen folder
-        # and the output is th same base name as the input
+        # this is pulling from the gen folder
+        # and the output is the same base name as the input
         template_path = GEN_DIR / f'{output_path}.html'
         output_path = Path(f'docs/{output_path}.html')
     else:
@@ -87,12 +87,15 @@ def generate(
 
 
 def default_variables(
+    output: str,
     variables: dict[str, str],
 ):
     variables['WEBNAME'] = 'Trenches of Honey'
+    variables['WEBDESC'] = 'Independent research'
+    variables['FILENAMEBASE'] = output
 
 
-def parse_variables(arguments):
+def parse_variables(output,arguments):
     variables = {}
 
     for argument in arguments:
@@ -104,9 +107,21 @@ def parse_variables(arguments):
         name, value = argument.split("=", 1)
         variables[name] = value
 
-    default_variables(variables)
+    default_variables(output,variables)
 
     return variables
+
+
+def main_core(
+    template_path: str,
+    output_path: Path,
+    variables: dict[str, str],
+):
+    try:
+        generate(template_path, output_path, variables)
+    except (FileNotFoundError, ValueError) as error:
+        print(f"Error: {error}", file=sys.stderr)
+        sys.exit(1)
 
 
 def main():
@@ -127,14 +142,14 @@ def main():
     template = sys.argv[1]
     output = sys.argv[2]
 
-    variables = parse_variables(sys.argv[3:])
+    template_path, output_path = build_paths(template,output)
+    variables = parse_variables(output,sys.argv[3:])
 
-    try:
-        template_path, output_path = build_paths(template,output)
-        generate(template_path, output_path, variables)
-    except (FileNotFoundError, ValueError) as error:
-        print(f"Error: {error}", file=sys.stderr)
-        sys.exit(1)
+    main_core(template_path,output_path,variables)
+
+    if template == '--gen':
+        print('   also updating index')
+        main_core(Path(f'docs/index.html'),Path(f'docs/index.html'),variables)
 
 
 if __name__ == "__main__":
