@@ -6,6 +6,7 @@ import sys
 
 
 TEMPLATE_DIR = Path("templates")
+GEN_DIR = Path("gen")
 
 
 def render(template: str, variables: dict[str, str]) -> str:
@@ -41,14 +42,28 @@ def build_toc(
     variables['TOC'] = toc
 
 
-def generate(
+def build_paths(
     template_name: str,
     output_path: str,
+) -> tuple[str, Path]:
+
+    if template_name == '--gen':
+        # this is pulling from te gen folder
+        # and the output is th same base name as the input
+        template_path = GEN_DIR / f'{output_path}.html'
+        output_path = Path(f'docs/{output_path}.html')
+    else:
+        template_path = TEMPLATE_DIR / template_name
+        output_path = Path(output_path)
+
+    return template_path,output_path
+
+
+def generate(
+    template_path: str,
+    output_path: Path,
     variables: dict[str, str],
 ):
-    template_path = TEMPLATE_DIR / template_name
-    output_path = Path(output_path)
-
     if not template_path.is_file():
         raise FileNotFoundError(
             f"Template not found: {template_path}"
@@ -115,7 +130,8 @@ def main():
     variables = parse_variables(sys.argv[3:])
 
     try:
-        generate(template, output, variables)
+        template_path, output_path = build_paths(template,output)
+        generate(template_path, output_path, variables)
     except (FileNotFoundError, ValueError) as error:
         print(f"Error: {error}", file=sys.stderr)
         sys.exit(1)
