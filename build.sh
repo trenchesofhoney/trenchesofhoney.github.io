@@ -23,7 +23,7 @@ cat templates/index_review_subject.html >> docs/index.html
 
 cat templates/index_review_book.html >> docs/index.html
 python3 generate.py --gen huehnergard \
-   SUBJECT='Akkadian' \
+   SUBJECT='Book Reviews' \
    TITLE='A Grammar of Akkadian' \
    SUBTITLE='' \
    AUTHOR='John Huehnergard' \
@@ -34,5 +34,6 @@ cat templates/index_review_endsubject.html >> docs/index.html
 
 echo finishing main page
 cat templates/index_footer.html >> docs/index.html
+python3 generate.py --index foo
 
 echo done

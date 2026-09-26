@@ -52,6 +52,9 @@ def build_paths(
         # and the output is the same base name as the input
         template_path = GEN_DIR / f'{output_path}.html'
         output_path = Path(f'docs/{output_path}.html')
+    elif template_name == '--index':
+        template_path = Path(f'docs/index.html')
+        output_path = Path(f'docs/index.html')
     else:
         template_path = TEMPLATE_DIR / template_name
         output_path = Path(output_path)

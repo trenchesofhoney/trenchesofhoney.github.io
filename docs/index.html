@@ -127,6 +127,24 @@
       color: var(--accent);
     }
 
+    .name {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .name li {
+      border-bottom: 1px solid var(--rule);
+      display: block;
+      padding: 11px 4px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .name li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
     footer {
       margin-top: 70px;
       padding-top: 20px;
@@ -157,22 +175,44 @@
   <div class="page">
 
     <header>
-       <h1>Trenches of Honey</h1>
+      <h1>Trenches of Honey</h1>
 
       <div class="about">
-        <a href="about.html">About</a>
+         Book reivews for self-study students and independent scholars.
+      </div>
+      <div class="about">
+         <i><a href="#name">Why Trenches of Honey?</a></i>
       </div>
     </header>
 
     <main>
 
       <section class="category">
-        <h2 class="category-title">Akkadian</h2>
+        <h2 class="category-title">Book Reviews</h2>
 
         <ul class="links">
           <li><a href="huehnergard.html">A Grammar of Akkadian</a></li>
         </ul>
       </section>
+
+    <section class="category" id="name">
+       <h2 class="category-title">Why Trenches of Honey?</h2>
+       <div class="about">
+       <ul class="name">
+          <li>In <a href="https://classics.mit.edu/Homer/odyssey.11.xi.html">Book 11</a> of the Odyssey, Circe instructs Odysseus to dig a trench and make offerings before summoning the dead. The name seemed appropriate for a site devoted to learning from people separated from us by centuries—or millennia.</li>
+       </ul>
+       </div>
+    </section>
+
+    <section class="category">
+       <h2 class="category-title">Contact</h2>
+       <div class="about">
+       <ul class="name">
+          <li>For academic correspondence, collaboration, or other inquiries, please write to
+            <a href="mailto:trenchesofhoney@gmail.com">trenchesofhoney@gmail.com</a>.
+       </ul>
+       </div>
+    </section>
 
     </main>
 

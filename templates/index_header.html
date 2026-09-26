@@ -127,6 +127,24 @@
       color: var(--accent);
     }
 
+    .name {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .name li {
+      border-bottom: 1px solid var(--rule);
+      display: block;
+      padding: 11px 4px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .name li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
     footer {
       margin-top: 70px;
       padding-top: 20px;
@@ -157,10 +175,13 @@
   <div class="page">
 
     <header>
-       <h1>{{WEBNAME}}</h1>
+      <h1>{{WEBNAME}}</h1>
 
       <div class="about">
-        <a href="about.html">About</a>
+         Book reivews for self-study students and independent scholars.
+      </div>
+      <div class="about">
+         <i><a href="#name">Why {{WEBNAME}}?</a></i>
       </div>
     </header>
 
