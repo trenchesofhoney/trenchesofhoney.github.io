@@ -29,6 +29,7 @@ python3 generate.py --gen huehnergard \
    AUTHOR='John Huehnergard' \
    YEAR='2026' \
    PUBLISHER='Harvard University Press' \
+   CREATED='26-Sept 2026' \
 
 cat templates/index_review_endsubject.html >> docs/index.html
 
