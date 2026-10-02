@@ -27,8 +27,8 @@ python3 generate.py --gen huehnergard \
    TITLE='A Grammar of Akkadian' \
    SUBTITLE='' \
    AUTHOR='John Huehnergard' \
-   YEAR='2026' \
-   PUBLISHER='Harvard University Press' \
+   YEAR='2028' \
+   PUBLISHER='Eisenbrauns' \
    CREATED='26-Sept 2026' \
 
 cat templates/index_review_endsubject.html >> docs/index.html
@@ -44,7 +44,7 @@ python3 generate.py --gen 2mins_a_day \
    AUTHOR='Johnathan Kline, PhD' \
    YEAR='2019' \
    PUBLISHER='Hendrickson Publishers' \
-   CREATED='28-Sept 2026' \
+   CREATED='29-Sept 2026' \
 
 cat templates/index_review_endsubject.html >> docs/index.html
 
