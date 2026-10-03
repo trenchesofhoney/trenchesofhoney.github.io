@@ -27,9 +27,9 @@ python3 generate.py --gen huehnergard \
    TITLE='A Grammar of Akkadian' \
    SUBTITLE='' \
    AUTHOR='John Huehnergard' \
-   YEAR='2028' \
+   YEAR='2008' \
    PUBLISHER='Eisenbrauns' \
-   CREATED='26-Sept 2026' \
+   CREATED='2-Oct 2026' \
 
 cat templates/index_review_endsubject.html >> docs/index.html
 
