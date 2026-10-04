@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A New Workbook of Cuneiform Signs [Trenches of Honey]</title>
+
+  <style>
+    :root {
+      --paper: #fdfdfb;
+      --ink: #202020;
+      --muted: #686868;
+      --rule: #d8d8d3;
+      --accent: #254d68;
+      --accent-light: #edf2f5;
+      --max-width: 1080px;
+      --reading-width: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    ::selection {
+      background: #dce7ed;
+    }
+
+    .site {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 64px 0 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: normal;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    nav {
+      flex-shrink: 0;
+    }
+
+    nav a {
+      margin-left: 22px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 210px minmax(0, var(--reading-width));
+      gap: 70px;
+      padding: 58px 0 90px;
+    }
+
+    aside {
+      position: sticky;
+      top: 30px;
+      align-self: start;
+    }
+
+    .toc-title {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--rule);
+    }
+
+    .toc li {
+      margin: 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 5px 0 5px 15px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      scroll-margin-top: 30px;
+      margin-bottom: 68px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.65rem;
+      font-weight: normal;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      margin: 32px 0 8px;
+      font-size: 1.1rem;
+      font-weight: normal;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.22rem;
+      line-height: 1.65;
+    }
+
+    .rule {
+      height: 1px;
+      margin: 32px 0;
+      background: var(--rule);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 30px 0;
+    }
+
+    .fact {
+      padding: 17px 20px 17px 0;
+    }
+
+    .fact + .fact {
+      padding-left: 20px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      margin: 28px 0;
+      padding: 18px 22px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .links li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .links li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    footer {
+      padding: 25px 0 45px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .site {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      header {
+        padding-top: 38px;
+      }
+
+      .header-inner {
+        display: block;
+      }
+
+      nav {
+        margin-top: 25px;
+      }
+
+      nav a {
+        margin: 0 18px 0 0;
+      }
+
+      main {
+        display: block;
+        padding-top: 35px;
+      }
+
+      aside {
+        position: static;
+        margin-bottom: 45px;
+      }
+
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        padding: 7px 0;
+      }
+
+      .toc a {
+        padding: 4px 15px 4px 0;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .fact + .fact {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+      }
+    }
+
+    table td {
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site">
+
+    <header>
+      <div class="header-inner">
+        <div>
+          <h1 class="name">A New Workbook of Cuneiform Signs </h1>
+          <p class="subtitle">Daniel C. Snell · 2022 · Eisenbrauns</p>
+          <p class="subtitle"><a href="index.html">Home</a></p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <aside aria-label="Table of contents">
+        <p class="toc-title">Contents</p>
+
+        <ol class="toc">
+
+<li><a href=#summary>01 — Summary</a></li>
+<li><a href=#details>02 — Details</a></li>
+<li><a href=#editions>03 — Editions</a></li>
+<li><a href=#rating>04 — Rating</a></li>
+        </ol>
+      </aside>
+
+      <article>
+
+        <section id="summary">
+          <h2>Summary</h2>
+
+          <p>
+          Huehnergard's <u>A New Workbook of Cuneiform Signs</u> is a progressive textbook of Akkadian, where each chapter provides a grammar lesson, vocabulary, and exercises.
+          </p>
+
+          <table>
+             <tr><td>Author</td><td>Daniel C. Snell</td></tr>
+             <tr><td>Year</td><td>2022</td></tr>
+             <tr><td>Publisher</td><td>Eisenbrauns</td></tr>
+             <tr><td>Category</td><td>Textbook</td></tr>
+          </table>
+
+        </section>
+
+        <section id="details">
+          <h2>Details</h2>
+
+          <i>What does reading this feel like?</i>
+          <p>
+            Huehnergard begins each chapter with grammar lessons, introduces new vocabulary, and finally presents some exercises.  Vocabulary is defined thoroughly, along with idiomatic usage, when applicable, and idiom is tested in exercises.  Both translating to and from Akkadian are exercised, as well as grammatical recitation, and eventually, normalization and cuneiform.  Answers to exercises are not included, but are available in a separate volume (see below).
+          </p>
+          <p>
+            In addition to points of grammar, several lessons introduce different categories of the Akkadian corpus--oaths, myths, contracts, etc.  This orients the student and real exposure to a broad selection of the attested literature.
+          </p>
+          <p>
+            Cuneiform is introduced in chapter 9, and each subsequent chapter includes a few new signs in its vocabulary.  Signs are presented (and exercised) in their Old Babylonian lapidary, cursive and Neo Assyrian forms, though the cursive forms predominate the exercises.  Most exercises present unnormalized (narrow) transcription, but cuneiform is also tested.
+          </p>
+          <p>
+            Huehnergard also presents regional differences--e.g. Mari or Southern usage--in both the lessons and exercises.  He is careful to indicate these distinctions but doesn't shy away from including them.
+          </p>
+
+          <!-- cut?
+          up to date (2022)
+          -->
+
+          <i>What all is included?</i>
+          <p>
+            After the 38 lessons, Huehnergard provides several useful appendices including: Systems of Dating, Measures, Historical Akkadian Phonology, Standard Babylonian, and Assyrian Phonology and Morphology.
+          </p>
+          <p>
+            Reference endmatter includes both English-Akkadian and Akkadian-English glossaries, paradigms, and lists of signs, logograms, determinatives.
+          </p>
+          <p>
+            As an added bonus, a selection from the Epic of Gilgamesh is provided for additional reading practice.
+          </p>
+
+          <i>What choices does the author make?</i>
+          <p>
+            Huehnergard makes a few pedagogical choices in presentation that are worth understanding from the outset.
+          </p>
+          <p>
+            The text is primarily concerned with the Old Babylonian dialect, though an appendix is provided explaining the transition to Standard Akkadian.
+          </p>
+          <p>
+            Words are presented with mimation throughout (<i>libbum</i> rather than <i>libbu</i>).  Macrons are used consistently to distinguish word forms, and circumflex accents mark contraction.
+          </p>
+          <p>
+            Huehnergard employs diachronic material in some lessons.  Rather than presenting diptotic and triptotic nouns differently, for example, Huehnergard instead presents the triptotic declension, then later teaches how to contract vowels so as to collapse the three forms into two.  This leads to a modern conceptualization undoubtedly unlike what an ancient would have had, and yet also simplifies and streamlines grammatical rules.
+          </p>
+          <p>
+            Throughout, the text does a great job of presenting material that builds over time, and of limiting references to later material in earlier grammar.  Similarly, exercises are constrained to the introduced vocabulary.  Early on, this requires some artificial material, but by lesson thirteen, exercises include unabridged authentic contracts.
+          </p>
+
+          <i>For self-study students</i>
+          <p>
+            For self-study, Huehnergard's <u>Key to A Grammar of Akkadian</u> is an absolute must-have.  The key provides answers to each exercise, but without commentary or elaboration.  Huehnergard's presentation is erudite and his exercises demanding enough that a motivated self-learner, even equipped with a copy of the Key, will still be occasionally perplexed.
+          </p>
+
+          <i>Going beyond</i>
+          <p>
+            After completing the 38 core chapters, at 466 pages, there's still more.  The appendices (listed above) provide additional enrichment.  The provided Index of Texts lets the graduate quickly refresh themselves on real reading selections.
+          </p>
+          <p>
+            Best of all, a selection from the Epic of Gilgamesh is included for additional reading.  This is tablet II of the Old Babylonian version, presented in transcription.  No translation is provided, but footnotes are liberally applied.
+          </p>
+
+        </section>
+
+        <!--
+        <section id="editions">
+          <h2>Editions</h2>
+
+          <p>
+            I am a researcher and writer interested in the ways ideas,
+            institutions, and technologies shape one another.
+          </p>
+
+        </section>
+        -->
+
+        <section id="rating">
+          <h2>Rating</h2>
+
+          <!--
+          <p>
+          <table>
+             <tr><td><b>For Self Study Students</b></td><td></td></tr>
+             <tr><td>Exercises<br><i>Can I check my understanding?</i></td>
+                <td>bar</td></tr>
+             <tr><td>Teachers' Guide</td>
+                <td>Partial</td></tr>
+             <tr><td>Reading</td>
+                <td>Yes</td></tr>
+             <tr><td>Ecosystem</td>
+                <td>No<br/>foo</td></tr>
+          </table>
+          </p>
+          -->
+
+          <div class="notice">
+            <p>
+            <strong>Strongly Recommended.</strong><br/>
+            <br/>
+            Akkadian has not attained the popularity of Greek or Hebrew and does not enjoy the same richness of materials for students.  Self-learners will have a challenge.  Huehnergard's treatment is scholarly, and his exercises are precise and exacting.  Readers who persevere will be richly rewarded, and will be hard pressed to find a more up-to-date, complete, or approachable textbook of Akkadian.
+            </p>
+          </div>
+
+        </section>
+
+      </article>
+    </main>
+
+    <footer>
+      <p>© Christoper Wood.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

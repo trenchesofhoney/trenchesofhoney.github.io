@@ -31,6 +31,16 @@ python3 generate.py --gen huehnergard \
    PUBLISHER='Eisenbrauns' \
    CREATED='2-Oct 2026' \
 
+#  cat templates/index_review_book.html >> docs/index.html
+#  python3 generate.py --gen workbook_cuneiform \
+#     SUBJECT='Akkadian' \
+#     TITLE='A New Workbook of Cuneiform Signs' \
+#     SUBTITLE='' \
+#     AUTHOR='Daniel C. Snell' \
+#     YEAR='2022' \
+#     PUBLISHER='Eisenbrauns' \
+#     CREATED='2-Oct 2026' \
+
 cat templates/index_review_endsubject.html >> docs/index.html
 
 echo Hebrew reviews
