@@ -55,6 +55,9 @@ def build_paths(
     elif template_name == '--index':
         template_path = Path(f'docs/index.html')
         output_path = Path(f'docs/index.html')
+    elif template_name == '--lib':
+        template_path = Path(f'docs/library.html')
+        output_path = Path(f'docs/library.html')
     else:
         template_path = TEMPLATE_DIR / template_name
         output_path = Path(output_path)

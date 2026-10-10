@@ -3,6 +3,7 @@
 set -e
 
 echo generating templates
+# =================================================================================
 if [ -d 'gen' ]; then
    rm -rf 'gen'
 fi
@@ -17,6 +18,9 @@ for file in reviews/*; do
       templates/review_footer.html \
       > gen/$filename
 done
+
+# index
+# =================================================================================
 
 echo Akkadian reviews
 cat templates/index_review_subject.html >> docs/index.html
@@ -61,5 +65,26 @@ cat templates/index_review_endsubject.html >> docs/index.html
 echo finishing main page
 cat templates/index_footer.html >> docs/index.html
 python3 generate.py --index foo
+
+echo library
+# =================================================================================
+cp templates/library_header.html docs/library.html
+
+#cat templates/library_subject.html >> docs/library.html
+
+#  cat templates/library_book.html >> docs/library.html
+#  python3 generate.py --lib bar \
+#     SUBJECT='Akkadian' \
+#     TITLE='A Grammar of Akkadian' \
+#     SUBTITLE='' \
+#     AUTHOR='John Huehnergard' \
+#     YEAR='2008' \
+#     PUBLISHER='Eisenbrauns' \
+#     NOTES='' \
+
+#cat templates/library_endsubject.html >> docs/library.html
+
+cat templates/library_footer.html >> docs/library.html
+python3 generate.py --lib foo
 
 echo done
