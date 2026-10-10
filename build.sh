@@ -116,6 +116,16 @@ python3 generate.py --lib bar \
    PUBLISHER='WILEY Blackwell' \
    NOTES='' \
 
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Greek' \
+   TITLE="Teacher's Handbook Athenaze Book II" \
+   SUBTITLE='An Introduction to Ancient Greek' \
+   AUTHOR='Balme' \
+   YEAR='1991' \
+   PUBLISHER='Oxford University Press' \
+   NOTES='' \
+
 cat templates/library_endsubject.html >> docs/library.html
 
 # Hebrew
@@ -130,6 +140,22 @@ python3 generate.py --lib bar \
    AUTHOR='Dobson' \
    YEAR='2005' \
    PUBLISHER='Baker Academic' \
+   NOTES='' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
+# Hittite
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Hittite' \
+   TITLE="The Elements of Hittite" \
+   SUBTITLE='' \
+   AUTHOR='Theo Van Den Hout' \
+   YEAR='2011' \
+   PUBLISHER='Cambridge University Press' \
    NOTES='' \
 
 cat templates/library_endsubject.html >> docs/library.html
@@ -153,6 +179,16 @@ cat templates/library_endsubject.html >> docs/library.html
 # Latin
 # ---------------------------------------------------------------------------------
 cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
+   TITLE="Latin Literature" \
+   SUBTITLE='A Book of Readings' \
+   AUTHOR='Wheelock' \
+   YEAR='1969' \
+   PUBLISHER='Harper and Row Publishers' \
+   NOTES='' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
@@ -188,6 +224,22 @@ python3 generate.py --lib bar \
    AUTHOR='Bowen' \
    YEAR='2020' \
    PUBLISHER='Digital Hammurabi Press' \
+   NOTES='' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
+# Tibetan
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Tibetan' \
+   TITLE="An Introduction to Classical Tibetan" \
+   SUBTITLE='' \
+   AUTHOR='Hodge' \
+   YEAR='2003' \
+   PUBLISHER='Orchid Press' \
    NOTES='' \
 
 cat templates/library_endsubject.html >> docs/library.html
