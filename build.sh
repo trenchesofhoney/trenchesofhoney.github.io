@@ -102,9 +102,35 @@ python3 generate.py --lib bar \
 
 cat templates/library_endsubject.html >> docs/library.html
 
+# Ge'ez
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT="Ge'ez" \
+   TITLE="Ethiopic Grammar with Chrestomathy and Glossary" \
+   SUBTITLE='' \
+   AUTHOR='Mercer' \
+   YEAR='1920' \
+   PUBLISHER='Oxford University Press' \
+   NOTES='' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
 # Greek
 # ---------------------------------------------------------------------------------
 cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Greek' \
+   TITLE="46 Stories in Classical Greek" \
+   SUBTITLE='' \
+   AUTHOR='Groton' \
+   YEAR='2014' \
+   PUBLISHER='Hackett' \
+   NOTES='Greek with glosses and glossary' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
@@ -115,6 +141,16 @@ python3 generate.py --lib bar \
    YEAR='2014' \
    PUBLISHER='WILEY Blackwell' \
    NOTES='' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Greek' \
+   TITLE="PLATO's Apology of Socrates" \
+   SUBTITLE='A Commentary' \
+   AUTHOR='Miller' \
+   YEAR='2010' \
+   PUBLISHER='University of Oklahoma Press' \
+   NOTES='Greek with glosses and generous footnotes, rich frontmatter, essays' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
@@ -210,11 +246,31 @@ python3 generate.py --lib bar \
    PUBLISHER='Cambridge Greek and Latin Classics' \
    NOTES='Latin with commentary' \
 
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
+   TITLE="Workbook for Wheelock's Latin" \
+   SUBTITLE='' \
+   AUTHOR='Comeau' \
+   YEAR='1997' \
+   PUBLISHER='Harper Perennial' \
+   NOTES='Additional exercises, without key' \
+
 cat templates/library_endsubject.html >> docs/library.html
 
 # Sumerian
 # ---------------------------------------------------------------------------------
 cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Sumerian' \
+   TITLE="Epics of Sumerian Kings [Writings from the Ancient World]" \
+   SUBTITLE='The Matter of Aratta' \
+   AUTHOR='Vanstiphout' \
+   YEAR='2003' \
+   PUBLISHER='Soceity of Biblical Literature' \
+   NOTES='Transcription with facing page translation, introduction: Enmerkar and Ensuhgirana, Enmerkar and the Lord of Aratta, The Lugalbanda Poems' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
