@@ -145,6 +145,26 @@ python3 generate.py --lib bar \
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Greek' \
+   TITLE='Greek Epic Fragments [Loeb]' \
+   SUBTITLE='' \
+   AUTHOR='West' \
+   YEAR='2003' \
+   PUBLISHER='Harvard University Press' \
+   NOTES='Greek with facing page translation.  Footnotes provided in both.' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Greek' \
+   TITLE='Heraclitus: Fragments' \
+   SUBTITLE='' \
+   AUTHOR='Haxton' \
+   YEAR='2003' \
+   PUBLISHER='Penguin' \
+   NOTES='Greek with facing page translation.  At initial glance, translation seems liberal and poetic.' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Greek' \
    TITLE="PLATO's Apology of Socrates" \
    SUBTITLE='A Commentary' \
    AUTHOR='Miller' \
