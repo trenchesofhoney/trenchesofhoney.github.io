@@ -86,6 +86,22 @@ python3 generate.py --lib bar \
 
 cat templates/library_endsubject.html >> docs/library.html
 
+# Arabic
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Arabic' \
+   TITLE="Easy Arabic Reader" \
+   SUBTITLE='A Three-Part Text for Beginning Students' \
+   AUTHOR='Gaafar' \
+   YEAR='2011' \
+   PUBLISHER='McGraw Hill' \
+   NOTES='Arabic with glosses, exercises to test comprehension.  Endmatter includes answers and glosses.' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
 # Aramaic
 # ---------------------------------------------------------------------------------
 cat templates/library_subject.html >> docs/library.html
@@ -99,6 +115,22 @@ python3 generate.py --lib bar \
    YEAR='2017' \
    PUBLISHER='Hendrickson Publishers' \
    NOTES='' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
+# Egyptian
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT="Egyptian" \
+   TITLE="Middle Egyptian Literature" \
+   SUBTITLE='Eight Literary Works of the Middle Kingdom' \
+   AUTHOR='Allen' \
+   YEAR='2015' \
+   PUBLISHER='Cambridge University Press' \
+   NOTES="Hieroglyphs, transcription, translation, and notes. Occasional illustrations.  Consecutive translations as appendix.  Works are: The Story of the Shipwrecked Sailor, The Story of Sinuhe, The Loyalist Instruction, The Instructions of the Kagemni's Father and Ptahhotep, The Discourses of the Eloquent Peasant, The Debate between a Man and His Soul, The Herdsman's Tale, Hymns to Senwosret III" \
 
 cat templates/library_endsubject.html >> docs/library.html
 
@@ -239,22 +271,42 @@ cat templates/library_subject.html >> docs/library.html
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Latin' \
+   TITLE="38 Latin Stories" \
+   SUBTITLE='' \
+   AUTHOR='Groton' \
+   YEAR='1995' \
+   PUBLISHER='Bolchazy-Carducci Publishers, Inc' \
+   NOTES='Latin with facing-page glossary, graded to Wheelock' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
+   TITLE="Auricula Meretricula" \
+   SUBTITLE='' \
+   AUTHOR='Blundell' \
+   YEAR='1993' \
+   PUBLISHER='Focus Information Group, Inc' \
+   NOTES='Latin, with facing-page glossary, graded to Wheelock.  A play in 10 scenes, appendices include allusion list and combined vocabulary' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
+   TITLE="Caesar's Gallic War" \
+   SUBTITLE='Books I-VII' \
+   AUTHOR='Dewey' \
+   YEAR='1918' \
+   PUBLISHER='Translation Publishing Company' \
+   NOTES='Interlinear Latin-English' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
    TITLE="Latin Literature" \
    SUBTITLE='A Book of Readings' \
    AUTHOR='Wheelock' \
    YEAR='1969' \
    PUBLISHER='Harper and Row Publishers' \
    NOTES='' \
-
-cat templates/library_book.html >> docs/library.html
-python3 generate.py --lib bar \
-   SUBJECT='Latin' \
-   TITLE="Seneca's Letters from a Stoic" \
-   SUBTITLE='' \
-   AUTHOR='Gummere' \
-   YEAR='1916' \
-   PUBLISHER='Dover' \
-   NOTES='All 124 of the Espistulae Morales in English' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
@@ -269,12 +321,48 @@ python3 generate.py --lib bar \
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Latin' \
+   TITLE="Seneca's Letters from a Stoic" \
+   SUBTITLE='' \
+   AUTHOR='Gummere' \
+   YEAR='1916' \
+   PUBLISHER='Dover' \
+   NOTES='All 124 of the Espistulae Morales in English' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
+   TITLE="Vergil's Aeneid" \
+   SUBTITLE='' \
+   AUTHOR='Pharr' \
+   YEAR='1964' \
+   PUBLISHER='D.C. Heath and Company' \
+   NOTES='Latin, with heavy glosses, running and fold-out glossary' \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Latin' \
    TITLE="Workbook for Wheelock's Latin" \
    SUBTITLE='' \
    AUTHOR='Comeau' \
    YEAR='1997' \
    PUBLISHER='Harper Perennial' \
    NOTES='Additional exercises, without key' \
+
+cat templates/library_endsubject.html >> docs/library.html
+
+# Sanskrit
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Sanskrit' \
+   TITLE="An Introductory Sanskrit Reader" \
+   SUBTITLE='Improving Reading Fluency' \
+   AUTHOR='Ruppel' \
+   YEAR='2022' \
+   PUBLISHER='Brill' \
+   NOTES="Devanagari, with generous vocabulary and notes.  Appendices include Roman transliteration, full translation, vocabulary.  Readings from Hitopadesa, Vikramacarita, Ramayana, Kathasaritsagara, Sanudasa's Story, Subhasitas" \
 
 cat templates/library_endsubject.html >> docs/library.html
 
@@ -289,7 +377,7 @@ python3 generate.py --lib bar \
    SUBTITLE='The Matter of Aratta' \
    AUTHOR='Vanstiphout' \
    YEAR='2003' \
-   PUBLISHER='Soceity of Biblical Literature' \
+   PUBLISHER='Society of Biblical Literature' \
    NOTES='Transcription with facing page translation, introduction: Enmerkar and Ensuhgirana, Enmerkar and the Lord of Aratta, The Lugalbanda Poems' \
 
 cat templates/library_book.html >> docs/library.html
