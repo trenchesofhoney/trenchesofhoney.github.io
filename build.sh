@@ -87,7 +87,7 @@ python3 generate.py --lib bar \
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Akkadian' \
-   TITLE="The Standard Babylonion Etana Epic [State Archives of Assyria Cuneiform Texts v II]" \
+   TITLE="The Standard Babylonian Etana Epic [State Archives of Assyria Cuneiform Texts v II]" \
    SUBTITLE='' \
    AUTHOR='Novotny' \
    YEAR='2001' \
@@ -97,12 +97,12 @@ python3 generate.py --lib bar \
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Akkadian' \
-   TITLE="The Standard Babylonion Epic of Anzu [State Archives of Assyria Cuneiform Texts v III]" \
+   TITLE="The Standard Babylonian Epic of Anzu [State Archives of Assyria Cuneiform Texts v III]" \
    SUBTITLE='' \
    AUTHOR='Annus' \
    YEAR='2001' \
    PUBLISHER='Vammalan Kirjapaino Oy' \
-   NOTES='Cuneiform, transliteration, score, glossary, indicies, and sign list' \
+   NOTES='Cuneiform, transliteration, score, glossary, indices, and sign list' \
 
 cat templates/library_endsubject.html >> docs/library.html
 
@@ -509,7 +509,7 @@ python3 generate.py --lib bar \
    SUBTITLE='American Oriental Series V33' \
    AUTHOR='Kent' \
    YEAR='1950' \
-   PUBLISHER='American Oriental Soceity' \
+   PUBLISHER='American Oriental Society' \
    NOTES="" \
 
 cat templates/library_endsubject.html >> docs/library.html
@@ -531,7 +531,7 @@ python3 generate.py --lib bar \
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Sanskrit' \
-   TITLE="Selections from teh Upanishads" \
+   TITLE="Selections from the Upanishads" \
    SUBTITLE='' \
    AUTHOR='Rangacharya' \
    YEAR='2002' \
@@ -594,7 +594,7 @@ python3 generate.py --lib bar \
    AUTHOR='Williams' \
    YEAR='1967' \
    PUBLISHER='Zondervan' \
-   NOTES='Unforetunately, the entire text appears in transcription.  13 lessons with a vocabulary list and answer key.' \
+   NOTES='Unfortunately, the entire text appears in transcription.  13 lessons with a vocabulary list and answer key.' \
 
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
@@ -604,7 +604,7 @@ python3 generate.py --lib bar \
    AUTHOR='Parker' \
    YEAR='1997' \
    PUBLISHER='Society of Biblical Literature' \
-   NOTES='Texts provded in two-column format with transliteration and translation, with end notes.' \
+   NOTES='Texts provided in two-column format with transliteration and translation, with end notes.' \
 
 cat templates/library_endsubject.html >> docs/library.html
 
