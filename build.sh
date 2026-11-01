@@ -624,6 +624,94 @@ python3 generate.py --lib bar \
 
 cat templates/library_endsubject.html >> docs/library.html
 
+# Memoir
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="Honest Graft" \
+   SUBTITLE='' \
+   AUTHOR="William L. Riordon" \
+   YEAR='1905' \
+   PUBLISHER='Brandywine press' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="I Attached Pearl Harbor" \
+   SUBTITLE='' \
+   AUTHOR="Kazuo Sakamaki" \
+   YEAR='2017' \
+   PUBLISHER='Rollston Press' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="If I Die in a Combat Zone, Box Me Up and Ship Me Home" \
+   SUBTITLE='' \
+   AUTHOR="Tim O'Brian" \
+   YEAR='1975' \
+   PUBLISHER='Broadway Books' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="In Sorcery's Shadow" \
+   SUBTITLE='' \
+   AUTHOR="Stoller" \
+   YEAR='1987' \
+   PUBLISHER='University of Chicago Press' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="Lights, Camera, Sex!" \
+   SUBTITLE='An Autobiography of Christy Canyon' \
+   AUTHOR="Christy Canyon" \
+   YEAR='2004' \
+   PUBLISHER='' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="Mad Madame Lalaurie" \
+   SUBTITLE='' \
+   AUTHOR="Love" \
+   YEAR='2011' \
+   PUBLISHER='History Press' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="Return to the High Valley" \
+   SUBTITLE='Coming Full Circle' \
+   AUTHOR="Kenneth E. Read" \
+   YEAR='1986' \
+   PUBLISHER='University of California Press' \
+   NOTES="" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Memoir' \
+   TITLE="World War II Memoirs" \
+   SUBTITLE='' \
+   AUTHOR='Samet' \
+   YEAR='2021' \
+   PUBLISHER='Library of America' \
+   NOTES="Contains <u>With the Old Breed</u>; Sledge, <u>Flights of Passage</u>; Hynes, and <u>Crossing the Line</u>; Kernan" \
+
+
+
+cat templates/library_endsubject.html >> docs/library.html
+
 cat templates/library_footer.html >> docs/library.html
 python3 generate.py --lib foo
 
