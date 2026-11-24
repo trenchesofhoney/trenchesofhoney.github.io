@@ -498,6 +498,22 @@ python3 generate.py --lib bar \
 
 cat templates/library_endsubject.html >> docs/library.html
 
+# Old English
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Old English' \
+   TITLE="Introduction to Old English" \
+   SUBTITLE='' \
+   AUTHOR='Baker' \
+   YEAR='2012' \
+   PUBLISHER='WILEY Blackwell' \
+   NOTES="Accessible grammar with anthology, but no exercises.  Anthology has 19 selections, including <u>The Fall of Adam and Eve</u>, <u>The Life of Saint Aethelthryth</u>, <u>Cynewulf and Cyneheard</u>, <u>The Martyrdom of Aelfheah</u>, <u>Sermo Lupi ad Anglos</u>, <u>King Alfred's Preface to Gregory's Pastoral Care</u>, <u>The Wanderer</u>, and <u>Judith</u>." \
+
+cat templates/library_endsubject.html >> docs/library.html
+
 # Old Persian
 # ---------------------------------------------------------------------------------
 cat templates/library_subject.html >> docs/library.html
@@ -537,6 +553,26 @@ python3 generate.py --lib bar \
    YEAR='2002' \
    PUBLISHER='Sri Rama Printers' \
    NOTES="Sanskrit mantras, interspersed with English translation.  No real linguistic notes or explanation" \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Sanskrit' \
+   TITLE="Srimad Bhagavatam" \
+   SUBTITLE='First Canto - Part One' \
+   AUTHOR='Prabhupada' \
+   YEAR='1972' \
+   PUBLISHER='Sri Rama Printers' \
+   NOTES="Includes devanagari text, romanized text, vocabulary, translation, and interpretation for each verse." \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Sanskrit' \
+   TITLE="Sriman Narayaneeyam" \
+   SUBTITLE='' \
+   AUTHOR='Parthasarathi' \
+   YEAR='2017' \
+   PUBLISHER='Giri trading agency private ltd' \
+   NOTES="Includes devanagari text, romanized text, and translation." \
 
 cat templates/library_endsubject.html >> docs/library.html
 
@@ -708,7 +744,21 @@ python3 generate.py --lib bar \
    PUBLISHER='Library of America' \
    NOTES="Contains <u>With the Old Breed</u>; Sledge, <u>Flights of Passage</u>; Hynes, and <u>Crossing the Line</u>; Kernan" \
 
+cat templates/library_endsubject.html >> docs/library.html
 
+# Psychology
+# ---------------------------------------------------------------------------------
+cat templates/library_subject.html >> docs/library.html
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Psychology' \
+   TITLE="Motivation and Personality" \
+   SUBTITLE='' \
+   AUTHOR="Abraham H. Maslow" \
+   YEAR='1970' \
+   PUBLISHER='Harper & Row' \
+   NOTES="" \
 
 cat templates/library_endsubject.html >> docs/library.html
 
