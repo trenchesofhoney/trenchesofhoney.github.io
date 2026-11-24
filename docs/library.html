@@ -10,6 +10,33 @@
 
   gtag('config', 'G-6ZD5Z8DEZT');
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const content = document.getElementById("library-content");
+  const nav = document.getElementById("library-nav");
+
+  const headings = content.querySelectorAll("h2");
+
+  headings.forEach(function (heading) {
+    const id = heading.textContent
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+    heading.id = id;
+
+    const link = document.createElement("a");
+    link.href = "#" + id;
+    link.textContent = heading.textContent;
+
+    const books = heading.parentElement.querySelectorAll("li");
+    link.textContent = link.textContent + " (" + books.length + ")";
+
+    nav.appendChild(link);
+  });
+});
+</script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -183,6 +210,57 @@
         margin-bottom: 34px;
       }
     }
+
+.library-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+}
+
+.library-sidebar {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.library-sidebar h3 {
+  margin-top: 0;
+}
+
+.library-sidebar nav a {
+  display: block;
+  padding: 5px 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+.library-sidebar nav a:hover {
+  background: #e8e8e8;
+}
+
+#library-content h2 {
+  scroll-margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .library-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .library-sidebar {
+    position: static;
+    max-height: 180px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+}
   </style>
 </head>
 
@@ -196,8 +274,14 @@
       <p class="subtitle"><a href="index.html">Home</a></p>
     </header>
 
-    <main>
+    <div class="library-layout">
 
+      <aside class="library-sidebar">
+        <h3>Contents</h3>
+        <nav id="library-nav"></nav>
+      </aside>
+
+      <main id="library-content">
       <section class="category">
         <h2 class="category-title">Akkadian</h2>
         <div class="about">
@@ -495,7 +579,8 @@
         </div>
       </section>
 
-    </main>
+      </main>
+    </div>
 
     <footer>
       © 2026 Christopher Wood
