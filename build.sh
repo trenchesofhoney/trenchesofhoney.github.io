@@ -505,6 +505,16 @@ cat templates/library_subject.html >> docs/library.html
 cat templates/library_book.html >> docs/library.html
 python3 generate.py --lib bar \
    SUBJECT='Old English' \
+   TITLE="Beowulf" \
+   SUBTITLE='' \
+   AUTHOR='Chickering, Jr.' \
+   YEAR='2006' \
+   PUBLISHER='Vintage Books' \
+   NOTES="Facing page Old English, with commentary, introduction, select glosses, and additinal endmatter like geneologies.  Amazing work.  Diactrics on c and g are omitted." \
+
+cat templates/library_book.html >> docs/library.html
+python3 generate.py --lib bar \
+   SUBJECT='Old English' \
    TITLE="Introduction to Old English" \
    SUBTITLE='' \
    AUTHOR='Baker' \
